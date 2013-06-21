@@ -16,6 +16,7 @@
     = csrf_meta_tags
   %body
     %header.bar-title
+      = yield :title_left
       %a{href: root_path}
         %h1.title TaskBreakDown
     .content

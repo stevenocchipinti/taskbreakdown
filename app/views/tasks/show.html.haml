@@ -10,5 +10,8 @@
 = render partial: 'task_list', locals: {tasks: @task.children}
 
 = link_to "New Subtask", new_task_path(parent_id: @task.id), :class => "button-block button-main"
-= link_to "Edit", edit_task_path(@task), :class => "button"
-= link_to "Back", back_path(@task), :class => "button"
+= link_to "Edit", edit_task_path(@task), :class => "button-block"
+= link_to 'Destroy', @task, :method => :delete, :class => "button-block button-negative", :data => { :confirm => 'Are you sure?' }
+
+- content_for :title_left do
+  = link_to "Back", back_path(@task), :class => "button-prev"

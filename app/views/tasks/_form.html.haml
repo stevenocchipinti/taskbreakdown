@@ -10,5 +10,7 @@
   = f.text_area :description
   = f.number_field :percentage_complete, min: 0, max: 1, step: 0.05
   = f.hidden_field :parent_id, value: params[:parent_id] if params[:parent_id]
-  = f.submit 'Save', :class => "button"
-  = link_to 'Back', back_path(@task), :class => "button"
+  = f.submit 'Save', :class => "button-main"
+
+- content_for :title_left do
+  = link_to "Back", back_path(@task), :class => "button-prev"
