@@ -1,10 +1,10 @@
-source 'https://rubygems.org'
+source 'http://rubygems.railscamp.org'
 
 gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'mysql2'
 gem 'jquery-rails'
-gem 'jbuilder'
+gem 'ancestry'
 
 group :development, :test do
   gem 'debugger'
