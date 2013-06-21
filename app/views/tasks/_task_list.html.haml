@@ -1,6 +1,7 @@
-%ul.list.inset
-  - tasks.each do |task|
-    %li
-      %a{href: task_path(task)}
-        %strong= task.name
-        %span.chevron
+- unless tasks.blank?
+  %ul.list.inset
+    - tasks.each do |task|
+      %li
+        %a{href: task_path(task)}
+          %strong= task.name
+          %span.chevron
