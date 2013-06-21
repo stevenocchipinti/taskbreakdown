@@ -11,4 +11,4 @@
   = f.text_field :percentage_complete
   = f.hidden_field :parent_id, value: params[:parent_id] if params[:parent_id]
   = f.submit 'Save', :class => "button"
-  = link_to 'Back', tasks_path, :class => "button"
+  = link_to 'Back', back_path(@task), :class => "button"
