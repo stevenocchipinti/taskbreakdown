@@ -10,6 +10,5 @@
   %b Percentage complete:
   = @task.percentage_complete
 
-= link_to 'Edit', edit_task_path(@task)
-\|
-= link_to 'Back', tasks_path
+= link_to 'Edit', edit_task_path(@task), :class => "button"
+= link_to 'Back', tasks_path, :class => "button"

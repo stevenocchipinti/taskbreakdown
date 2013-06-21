@@ -1,23 +1,12 @@
-%h1 Listing tasks
-
-%table
-  %tr
-    %th Name
-    %th Description
-    %th Percentage complete
-    %th
-    %th
-    %th
-
+%ul.list.inset
   - @tasks.each do |task|
-    %tr
-      %td= task.name
-      %td= task.description
-      %td= task.percentage_complete
-      %td= link_to 'Show', task
-      %td= link_to 'Edit', edit_task_path(task)
-      %td= link_to 'Destroy', task, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %li
+      %a{href: task_path(task)}
+        %strong= task.name
+      -#   %span.chevron
+      -# -# %td= task.description
+      -# -# %td= task.percentage_complete
+      -# -# %td= link_to 'Edit', edit_task_path(task)
+      -# -# %td= link_to 'Destroy', task, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
-
-= link_to 'New Task', new_task_path
+%a.button-block{href: new_task_path} New Task
