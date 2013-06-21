@@ -1,6 +1,8 @@
 %p#notice= notice
 
-%h1= @task.name
+%h1
+  = @task.name
+  = percentage_span_for @task
 
 %p
   = @task.description
