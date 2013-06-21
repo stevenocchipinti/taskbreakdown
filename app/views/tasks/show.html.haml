@@ -1,14 +1,9 @@
 %p#notice= notice
 
+%h1= @task.name
+
 %p
-  %b Name:
-  = @task.name
-%p
-  %b Description:
   = @task.description
-%p
-  %b Percentage complete:
-  = @task.percentage_complete
 
 = link_to 'Edit', edit_task_path(@task), :class => "button"
 = link_to 'Back', tasks_path, :class => "button"
