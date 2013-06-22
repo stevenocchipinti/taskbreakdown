@@ -58,5 +58,8 @@ module Taskbreakdown
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Make asset pre-compliation work on Heroku
+    config.assets.initialize_on_precompile = false
   end
 end
