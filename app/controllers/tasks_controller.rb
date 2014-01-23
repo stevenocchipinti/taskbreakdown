@@ -40,7 +40,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(params[:task])
+    @task = Task.new(task_params)
 
     respond_to do |format|
       if @task.save
@@ -59,7 +59,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     respond_to do |format|
-      if @task.update_attributes(params[:task])
+      if @task.update_attributes(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,4 +80,11 @@ class TasksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:description, :name, :percentage_complete, :parent_id)
+  end
+
 end
