@@ -9,19 +9,19 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621110312) do
+ActiveRecord::Schema.define(version: 20130621110312) do
 
-  create_table "tasks", :force => true do |t|
+  create_table "tasks", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.decimal  "percentage_complete"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "ancestry"
   end
 
-  add_index "tasks", ["ancestry"], :name => "index_tasks_on_ancestry"
+  add_index "tasks", ["ancestry"], name: "index_tasks_on_ancestry"
 
 end

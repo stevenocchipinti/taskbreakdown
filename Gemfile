@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.3'
 
 gem 'rails', '4.0.2'
 gem 'haml-rails'
@@ -16,10 +16,9 @@ group :production do
 end
 
 group :development, :test do
-  gem 'debugger'
+  gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'awesome_print'
 end
 
 group :development do
